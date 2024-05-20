@@ -30,19 +30,25 @@ function Navbar() {
 
   const section = ['men', 'women', 'mer'];
 
-  return (
+  return ( 
     <>
-    <div className='w-full flex h-[12%] bg-slate-600' onMouseLeave={navHoverLeave}>
-      <div className='w-[12%] h-full bg-red-600'>logo</div>
+    <div className='w-full flex  h-[12%] border-1 shadow-lg sticky pl-[2%] bg-white top-0 z-50'  onMouseLeave={navHoverLeave}>
+      <div className='w-[12%] h-full  bg-red-600'>logo</div>
 
-      <div className='flex justify-center items-center'>
-        <div className='flex'>
+      <div className='flex  items-center w-[88%]'>
+        <div className='h-full flex ml-[12%]  items-center w-[50%] '>
+  
+          <input className='h-[60%] ml-[2%] pl-3 border-[0.1rem] border-r-0  rounded-xl  rounded-r-none w-full' type="text" placeholder='Search For Products' />
+          <div className=' h-[60%]  w-[12%] flex justify-center items-center border-[0.1rem] rounded-r-xl '>Q</div>
+        </div>
+        <div className='flex ml-[4%]'>
           {section.map((route, index) => (
             <div
+            
               onMouseEnter={()=>navHover(route)}
               onMouseLeave={navHoverLeave}
               key={index}
-              className={`mr-2 cursor-pointer ${activeItem === route ? 'bg-red-400' : ''} hover:bg-blue-500`}
+              className={`mr-8  cursor-pointer ${activeItem === route ? 'bg-red-400' : ''} hover:bg-blue-500`}
               onClick={() => handleItemClick(route)}
             >
               {route}
@@ -52,7 +58,9 @@ function Navbar() {
       </div>
     </div>
 
-     {isMenuOpen && <div className=' absolute left-[12%] h-[40%] w-[40%] '>
+
+
+     {isMenuOpen && <div className=' fixed left-[12%] h-[40%] w-[40%] '>
       <Menmenu/>
       </div>}
     </>
