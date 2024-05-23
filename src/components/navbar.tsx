@@ -72,7 +72,7 @@ function Navbar() {
 
 
 
-     {isMenuOpen && <div onMouseEnter={navHover} onMouseLeave={navHoverLeave} className=' fixed mt-2 right-[6%] h-[40%] w-[30%] '>
+     {isMenuOpen && <div onMouseEnter={()=>navHover(currentHover)} onMouseLeave={navHoverLeave} className=' fixed bg-red-400 right-[6%] h-[40%] w-[30%] '>
       <HoverComponents hoverON={currentHover}/>
       </div>}
     </>
